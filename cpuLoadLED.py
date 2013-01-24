@@ -4,24 +4,23 @@ import os
 from time import sleep
 
 OKLED = 16
+dutyCycle = 0.0
+frequency = 1.0/60.0
+time = 0
+maxPeriod = 5.0
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(OKLED, GPIO.OUT)
 
-sleepAmt = 0.0
-refresh = 1.0/60
-time = 0
-maxPeriod = 5.0
-
 while True:
 	load = 1.0 - os.getloadavg()[0]
-	sleepAmt = math.sin(time/(0.001 + maxPeriod*load)) + 1
-	sleepAmt *= 0.5
+
+	dutyCycle = math.sin(time/(0.001 + maxPeriod*load)) + 1
+	dutyCycle *= 0.5
 
 	GPIO.output(OKLED, GPIO.LOW)
-	sleep(refresh*sleepAmt)
+	sleep(frequency*dutyCycle)
 	GPIO.output(OKLED, GPIO.HIGH)
-	sleep(refresh * (1-sleepAmt))
+	sleep(frequency * (1-dutyCycle))
 
-	sleepAmt += 0.001
 	time += 1
