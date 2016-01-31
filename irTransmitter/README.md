@@ -2,6 +2,7 @@ Raspberry Pi IR Transmitter with LIRC
 =====================================
 
 OS: 2015-11-21-raspbian-jessie-lite
+
 Board: Raspberry Pi Revision 1.0, Model B
 
 
@@ -11,10 +12,10 @@ Setup:
 sudo apt-get install lirc
 ```
 
-Modify `/etc/modules` with provided file
-Modify `/etc/lirc/hardware.conf` with provided file
-Modify `/boot/config.txt` with provided file
-Reboot the pi `sudo shutdown now -r`
+* Modify `/etc/modules` with provided file
+* Modify `/etc/lirc/hardware.conf` with provided file
+* Modify `/boot/config.txt` with provided file
+* Reboot the pi `sudo shutdown now -r`
 
 Send a command from your config file:
 
