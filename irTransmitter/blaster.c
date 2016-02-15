@@ -11,7 +11,7 @@ int pulseCount = 0;
 
 void addPulse(uint32_t onPins, uint32_t offPins, uint32_t duration)
 {
-	irSignal[pulseCount].gpioOn = 1 << onPins;
+	irSignal[pulseCount].gpioOn = onPins;
 	irSignal[pulseCount].gpioOff = offPins;
 	irSignal[pulseCount].usDelay = duration;
 
