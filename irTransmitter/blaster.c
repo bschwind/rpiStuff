@@ -3,17 +3,17 @@
 #include <math.h>
 #include <pigpio.h>
 
-#define MAX_PULSES 12000;
+#define MAX_PULSES 12000
 
 // This holds the entire IR signal waveform
-gpioPulse_t* irSignal[MAX_PULSES] = (gpioPulse_t*)malloc(sizeof(gpioPulse_t) * MAX_PULSES);
+static gpioPulse_t irSignal[MAX_PULSES];
 int pulseCount = 0;
 
 void addPulse(uint32_t onPins, uint32_t offPins, uint32_t duration)
 {
-	irSignal[i].gpioOn = 1 << onPins;
-	irSignal[i].gpioOff = offPins;
-	irSignal[i].usDelay = duration;
+	irSignal[pulseCount].gpioOn = 1 << onPins;
+	irSignal[pulseCount].gpioOff = offPins;
+	irSignal[pulseCount].usDelay = duration;
 
 	pulseCount++;
 }
