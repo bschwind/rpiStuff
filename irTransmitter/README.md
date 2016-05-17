@@ -15,6 +15,7 @@ sudo apt-get install lirc
 * Modify `/etc/modules` with provided file
 * Modify `/etc/lirc/hardware.conf` with provided file
 * Modify `/boot/config.txt` with provided file
+* Modify `/etc/lirc/lircd.conf` with your desired config settings (see [lircd.conf example](etc/lirc/lircd.conf))
 * Reboot the pi `sudo shutdown now -r`
 
 Send a command from your config file:
